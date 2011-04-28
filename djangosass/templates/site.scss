@@ -1,0 +1,67 @@
+    
+$content_width: 500px;
+$header_width: $content_width - 10px; 
+$background: #FFFFFF;
+
+html {
+   font-size: 62.5%;
+}
+
+body {
+  background-color: $background;
+}
+
+@mixin centered {
+    margin: {
+      left: auto;
+      right: auto;
+    }
+}
+
+@mixin rounded-corners {
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+}
+
+.content {
+  @include centered;
+  @include rounded-corners;
+  background-color: darken($background, 3%);
+  width: $content_width;
+  border: 2px solid darken($background, 14%);
+  padding: 5px;
+  
+  .header {
+    @include centered;
+    @include rounded-corners;
+    margin: {
+      top: 4px;
+      bottom: 4px;
+    }
+    width: $header_width;
+    border: 2px solid darken($background, 50%);
+    text-align: center;
+    background-color: darken($background, 20%);
+    h1 {
+      font-size: 30px;
+      text-align: center;
+    }
+  }
+  .entry {
+    font-size: 14px;
+    p {
+      margin-left: 7px;
+      margin-right: 7px;
+    }
+  }
+  .footer {
+    @include centered;
+    @include rounded-corners;
+    font-size: 10px;    
+    width: $header_width;
+    background-color: darken($background, 20%);
+    border: 2px solid darken($background, 50%);
+    text-align: center;
+    padding: 4px;
+  }
+}
